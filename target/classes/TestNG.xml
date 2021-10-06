@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite for Parallel Testing" verbose="3" parallel = "tests" thread-count="2">
+
+
+
+  <test name="Google Test" parallel ="methods" thread-count="5">
+  	<parameter name="browser" value="Chrome" />
+  	
+    <classes>
+      <class name="TestPackage.TestGoogle">
+      <methods>
+      	<include name = "titleTest1"/>
+      	<include name = "getLinksTest"/>
+     </methods>
+     </class> 	 
+    </classes>
+  </test> <!-- Test1 -->
+  
+<test name="Amazon Test" parallel ="methods" thread-count="3">
+  	<parameter name="browser" value="Chrome" />
+  	
+    <classes>
+      <class name="TestPackage.TestAmazon">
+      <methods>
+      	<include name = "AmazonTitle"/>
+     </methods>
+     </class> 	 
+    </classes>
+  </test> <!-- Test2 -->  
+  
+    
+</suite> <!-- TestSuite -->
